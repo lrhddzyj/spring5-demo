@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!--    &lt;!&ndash; 通过静态工厂方法进行实例化Bean&ndash;&gt;-->
+<!--    <bean id="userInstantiationFromStaticMethod"  class="com.lrh.spring.ioc.container.domain.User" factory-method="createNewUser">-->
+
+<!--    </bean>-->
+
+<!--    &lt;!&ndash; 实例（Bean）的方式实例化Bean  &ndash;&gt;-->
+<!--    <bean id="userInstantiationFromFactory" class="com.lrh.spring.ioc.container.domain.User"-->
+<!--          factory-bean="userFactory" factory-method="createUser"/>-->
+
+<!--    &lt;!&ndash;FactoryBean 实例化Bean&ndash;&gt;-->
+<!--     <bean id="userInstantiationFromFactoryBean" class="com.lrh.spring.beans.factory.UserFactoryBean"/>-->
+
+<!--    <bean id="userFactory" class="com.lrh.spring.beans.factory.DefaultUserFactory"/>-->
+
+
+</beans>
