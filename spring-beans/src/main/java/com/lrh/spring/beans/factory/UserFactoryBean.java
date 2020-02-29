@@ -8,11 +8,11 @@ import org.springframework.beans.factory.FactoryBean;
  *
  *
  */
-public class UserFactoryBean implements FactoryBean{
+public class UserFactoryBean implements FactoryBean<User>{
 
 
 	@Override
-	public Object getObject() throws Exception {
+	public User getObject() throws Exception {
 		User user = new User();
 		user.setName("通过FactoryBean方式生成的Bean");
 		user.setAge(20);
@@ -20,7 +20,7 @@ public class UserFactoryBean implements FactoryBean{
 	}
 
 	@Override
-	public Class<?> getObjectType() {
+	public Class<User> getObjectType() {
 		return User.class;
 	}
 }

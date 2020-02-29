@@ -9,8 +9,7 @@
     </bean>
 
     <!-- 实例（Bean）的方式实例化Bean  -->
-    <bean id="userInstantiationFromFactory" class="com.lrh.spring.ioc.container.domain.User"
-          factory-bean="userFactory" factory-method="createUser"/>
+    <bean id="userInstantiationFromFactory" factory-bean="userFactory" factory-method="createUser"/>
 
     <!--FactoryBean 实例化Bean-->
      <bean id="userInstantiationFromFactoryBean" class="com.lrh.spring.beans.factory.UserFactoryBean"/>

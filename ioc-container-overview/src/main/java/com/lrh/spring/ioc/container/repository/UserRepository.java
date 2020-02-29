@@ -11,7 +11,7 @@ public class UserRepository {
 
 	private Collection<User> users; // 自建Bean
 
-	private BeanFactory beanFactory;  //内建  非Bean对象（依赖）
+	private BeanFactory beanFactory;  //内建 非Bean对象（依赖）
 
 	private ObjectFactory<User> userObjectFactory;  //自建对象的工厂Bean
 

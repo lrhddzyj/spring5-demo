@@ -8,7 +8,7 @@ import org.springframework.beans.factory.support.BeanDefinitionBuilder;
 import org.springframework.beans.factory.support.GenericBeanDefinition;
 
 /**
- *  Bean 的创建
+ *  Bean 元信息的定义
  */
 public class BeanDefinitionCreateDemo {
 

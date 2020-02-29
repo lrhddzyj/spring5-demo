@@ -16,18 +16,19 @@ import java.util.Map;
  * Bean的创建与注册 示例
  */
 
-@Import(value = AnnotationBeanDefinitionDemo.ConfigBean.class) //注解元信息注册（3）  通过导入配置
-public class AnnotationBeanDefinitionDemo {
+//@Import(value = AnnotationBeanDefinitionDemo.ConfigBean.class) //注解元信息注册（3）  通过导入配置
+public class AnnotationBeanDefinitionAndRegistryDemo {
 
 	public static void main(String[] args) {
 		//创建BeanFactory 容器
 		AnnotationConfigApplicationContext configApplicationContext = new AnnotationConfigApplicationContext();
 
 		//JAVA API 的方式（3） 注册 Configuration Class （配置类  作用相当于代替xml）
-		configApplicationContext.register(ConfigBean.class);
+//		configApplicationContext.register(ConfigBean.class);
+//		configApplicationContext.register(AnnotationBeanDefinitionDemo.class);
 
 		// JAVA API 的方式（2） 命名方式调用注册
-		registerBeanDefinition(configApplicationContext,"new-zhangsan",User.class);
+//		registerBeanDefinition(configApplicationContext,"new-zhangsan",User.class);
 		//JAVA API 的方式（1） 非命名方式调用注册
 		registerBeanDefinition(configApplicationContext,User.class);
 
