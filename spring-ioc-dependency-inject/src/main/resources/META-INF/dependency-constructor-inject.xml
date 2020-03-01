@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+    <bean id="user" class="com.lrh.ioc.dependence.inject.domain.User">
+        <property name="id" value="30"/>
+        <property name="name" value="cat"/>
+    </bean>
+
+
+    <!--constructor 方式手动注入-->
+    <bean class="com.lrh.ioc.dependence.inject.domain.UserHolder">
+        <constructor-arg name="user" ref="user"/>
+    </bean>
+
+
+</beans>
