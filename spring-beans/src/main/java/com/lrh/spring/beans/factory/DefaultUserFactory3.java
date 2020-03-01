@@ -4,7 +4,7 @@ import org.springframework.beans.factory.InitializingBean;
 
 import javax.annotation.PostConstruct;
 
-public class DefaultUserFactory2 implements UserFactory, InitializingBean {
+public class DefaultUserFactory3 implements UserFactory, InitializingBean {
 
 
     // 1基于@PostConstruct 的注解初始化
