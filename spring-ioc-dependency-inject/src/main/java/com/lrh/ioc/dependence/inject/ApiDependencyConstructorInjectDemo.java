@@ -33,7 +33,7 @@ public class ApiDependencyConstructorInjectDemo {
     }
 
 
-    //创建BeanDefinition constructor 注入BEAN引用
+    //创建BeanDefinition constructor 注入bean引用
     private static BeanDefinition createUserHolderBeanDefinition(){
         BeanDefinitionBuilder beanDefinitionBuilder = BeanDefinitionBuilder.genericBeanDefinition(UserHolder2.class);
         beanDefinitionBuilder.addConstructorArgReference("user");
