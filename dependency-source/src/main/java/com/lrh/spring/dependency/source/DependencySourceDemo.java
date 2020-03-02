@@ -54,7 +54,7 @@ public class DependencySourceDemo {
         try {
             return beanFactory.getBean(beanType);
         } catch (NoSuchBeanDefinitionException e) {
-            System.out.println("当前类型" + beanType.getName() + "无法在BeanFactory中被找到!");
+            System.err.println("当前类型" + beanType.getName() + "无法在BeanFactory中被找到!");
             return null;
         }
     }
