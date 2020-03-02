@@ -16,4 +16,11 @@
     </bean>
 
 
+    <!--constructor 方式手动注入-->
+    <bean class="com.lrh.ioc.dependence.inject.domain.UserHolder2" autowire="constructor">
+
+    </bean>
+
+
+
 </beans>
