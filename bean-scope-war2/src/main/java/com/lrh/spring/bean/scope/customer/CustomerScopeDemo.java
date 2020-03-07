@@ -5,6 +5,9 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Scope;
 
+/**
+ * 自定义scope应用 demo
+ */
 public class CustomerScopeDemo {
 
 

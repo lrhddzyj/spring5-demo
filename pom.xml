@@ -17,6 +17,7 @@
         <module>dependency-source</module>
         <module>bean-scope</module>
         <module>bean-scope-war2</module>
+        <module>bean-scope-with-spring-cloud</module>
     </modules>
 
     <properties>
