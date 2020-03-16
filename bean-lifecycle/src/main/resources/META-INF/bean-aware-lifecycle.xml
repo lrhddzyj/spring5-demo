@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="user" class="com.lrh.spring.bean.lifecycle.domain.User">
+        <property name="age" value="30"/>
+        <property name="name" value="cat"/>
+    </bean>
+
+    <bean id="vipUser" class="com.lrh.spring.bean.lifecycle.domain.VipUser" parent="user" primary="true">
+        <property name="vipLevel" value="1"></property>
+    </bean>
+
+    <!--ObjectFactoryCreatingFactoryBean  用于创建ObjectFactory的FactoryBean-->
+    <bean id="userObjectFactoryBean" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
+        <property name="targetBeanName" value="user"></property>
+    </bean>
+
+    <bean id="userHolder" class="com.lrh.spring.bean.lifecycle.domain.UserHolder" autowire="constructor"/>
+
+
+</beans>
