@@ -12,6 +12,9 @@
         <property name="vipLevel" value="1"></property>
     </bean>
 
+    <bean id="userHolder" class="com.lrh.spring.bean.lifecycle.domain.UserHolder" autowire="constructor"
+     init-method="customerInitMethod" destroy-method="customerDestroyMethod"></bean>
+
     <!--ObjectFactoryCreatingFactoryBean  用于创建ObjectFactory的FactoryBean-->
     <bean id="userObjectFactoryBean" class="org.springframework.beans.factory.config.ObjectFactoryCreatingFactoryBean">
         <property name="targetBeanName" value="user"></property>
