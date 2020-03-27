@@ -61,7 +61,7 @@ public class BeanScopeDemo implements DisposableBean {
             beanFactory.addBeanPostProcessor(new BeanPostProcessor() {
                 @Override
                 public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-                    System.out.printf("%s Bean 名称 ： %s 在初始化后回调...%n", bean.getClass().getName(), beanName);
+                    System.out.printf(" Bean 名称 ： %s 在初始化后回调...%n", bean.getClass().getName(), beanName);
                     //实例化完成之后可以托管给其他的Bean 来执行销毁动作（当然只有Prototype模式才需要 singleton受spring容器托管）
                     return bean;
                 }
