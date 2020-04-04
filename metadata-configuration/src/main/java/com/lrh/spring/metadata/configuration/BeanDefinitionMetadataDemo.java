@@ -21,7 +21,7 @@ public class BeanDefinitionMetadataDemo {
 					BeanDefinition beanDefinition = beanFactory.getBeanDefinition(beanName);
 					String name = (String) beanDefinition.getAttribute("name");
 					((User) bean).setName(name);
-					System.out.printf("beanDefinition source is %s",beanDefinition.getSource());
+					System.out.printf("beanDefinition source is %s\n",beanDefinition.getSource());
 				}
 				return bean;
 			}
@@ -32,8 +32,13 @@ public class BeanDefinitionMetadataDemo {
 				.addPropertyValue("age", 16);
 
 		GenericBeanDefinition beanDefinition = (GenericBeanDefinition)beanDefinitionBuilder.getBeanDefinition();
+
+		//附加属性（不影响Bean initialize populate）
 		beanDefinition.setAttribute("name", "spring");
+
+		//当前BeanDefinition来自何方 （辅助作用）
 		beanDefinition.setSource(BeanDefinitionMetadataDemo.class);
+
 
 		beanFactory.registerBeanDefinition("user", beanDefinition);
 
