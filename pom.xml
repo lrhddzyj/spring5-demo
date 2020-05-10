@@ -20,6 +20,8 @@
         <module>bean-scope-with-spring-cloud</module>
         <module>bean-lifecycle</module>
         <module>metadata-configuration</module>
+        <module>spring-mock-test</module>
+        <module>resource</module>
     </modules>
 
     <properties>
@@ -40,6 +42,12 @@
                 <dependency>
                     <groupId>org.springframework</groupId>
                     <artifactId>spring-webmvc</artifactId>
+                    <version>${spring.version}</version>
+                </dependency>
+
+                <dependency>
+                    <groupId>org.springframework</groupId>
+                    <artifactId>spring-test</artifactId>
                     <version>${spring.version}</version>
                 </dependency>
             </dependencies>
