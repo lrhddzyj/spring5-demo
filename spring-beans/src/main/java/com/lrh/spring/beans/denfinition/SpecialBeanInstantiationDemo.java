@@ -5,6 +5,7 @@ import com.lrh.spring.beans.factory.UserFactory;
 import com.lrh.spring.ioc.container.domain.User;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.config.AutowireCapableBeanFactory;
+import org.springframework.beans.factory.config.ConfigurableListableBeanFactory;
 import org.springframework.beans.factory.serviceloader.ServiceLoaderFactoryBean;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.Bean;
@@ -41,13 +42,23 @@ public class SpecialBeanInstantiationDemo {
 //        displayServiceLoader(serviceLoader);
 
         //通过autowireCapableBeanFactory 实例化Bean
-        createBeanWithAutoWireCapableBeanFactory(beanFactory);
+//        createBeanWithAutoWireCapableBeanFactory(beanFactory);
+        ServiceLoaderFactoryBean serviceLoaderFactoryBean = new ServiceLoaderFactoryBean();
+        serviceLoaderFactoryBean.setServiceType(UserFactory.class);
 
+        ConfigurableListableBeanFactory beanFactory1 = beanFactory.getBeanFactory();
+        beanFactory1.registerSingleton("ss",serviceLoaderFactoryBean);
 
 
         beanFactory.refresh();
 
-      //  demoServiceLoader();
+        Map<String, ServiceLoader> beansOfType2 = beanFactory.getBeansOfType(ServiceLoader.class);
+        System.out.println(beansOfType2);
+
+        Map<String, UserFactory> beansOfType1 = beanFactory.getBeansOfType(UserFactory.class);
+        System.out.println(beansOfType1);
+
+        //  demoServiceLoader();
 
         Map<String, ServiceLoader> beansOfType =
                 beanFactory.getBeansOfType(ServiceLoader.class);
@@ -85,10 +96,10 @@ public class SpecialBeanInstantiationDemo {
 
 
 //测试没成功!
-//    public ServiceLoader<UserFactory> userFactories(ServiceLoaderFactoryBean serviceLoaderFactoryBean) throws Exception {
-//        return (ServiceLoader)serviceLoaderFactoryBean.getObject();
-//
-//    }
+    public ServiceLoader<UserFactory> userFactories(ServiceLoaderFactoryBean serviceLoaderFactoryBean) throws Exception {
+        return (ServiceLoader)serviceLoaderFactoryBean.getObject();
+
+    }
 
 
 
