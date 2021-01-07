@@ -45,7 +45,7 @@ public class AopInterceptorDemo {
               ExceptionInterceptor exceptionInterceptor = new ExceptionInterceptor() {
                 @Override
                 public void exceptionCall(Object proxy, Method method, Object[] args,
-                    Throwable throwable) {
+                    Exception throwable) {
                   System.out.println("拦截到异常"+ throwable.getMessage());
                 }
               };

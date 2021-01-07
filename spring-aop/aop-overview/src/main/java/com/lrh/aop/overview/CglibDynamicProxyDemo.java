@@ -35,8 +35,9 @@ public class CglibDynamicProxyDemo {
       public Object intercept(Object source, Method method, Object[] args, MethodProxy methodProxy)
           throws Throwable {
         long startTime = System.currentTimeMillis();
-        Object methodResult = method.invoke(source, args);
-        System.out.println(methodResult);
+        //错误的调用，原始方法被调用后会导致一直被拦截又重新进来
+//        Object methodResult = method.invoke(source, arguments);
+//        System.out.println(methodResult);
 
         Object methodProxyResult = methodProxy.invokeSuper(source, args);
         System.out.println(methodProxyResult);

@@ -15,6 +15,6 @@ public interface ExceptionInterceptor {
    * @param args
    * @param throwable
    */
-  void exceptionCall(Object proxy, Method method, Object[] args, Throwable throwable);
+  void exceptionCall(Object proxy, Method method, Object[] args, Exception throwable);
 
 }
