@@ -42,14 +42,14 @@ public class AopInterceptorDemo {
               result = echoServiceImp.echo((String) args1[0]);
               endTime = (Long) afterInterceptor.after(proxy, method, args, result);
             } catch (Exception e) {
-              ExceptionInterceptor exceptionInterceptor = new ExceptionInterceptor() {
-                @Override
-                public void exceptionCall(Object proxy, Method method, Object[] args,
-                    Exception throwable) {
-                  System.out.println("拦截到异常"+ throwable.getMessage());
-                }
-              };
-              exceptionInterceptor.exceptionCall(proxy, method, args, e);
+//              ExceptionInterceptor exceptionInterceptor = new ExceptionInterceptor() {
+//                @Override
+//                public void exceptionCall(Object proxy, Method method, Object[] args,
+//                    Exception throwable) {
+//                  System.out.println("拦截到异常"+ throwable.getMessage());
+//                }
+//              };
+//              exceptionInterceptor.exceptionCall(proxy, method, args, e);
 
             } finally {
               TimeFinallyInterceptor timeFinallyInterceptor = new TimeFinallyInterceptor(startTime,
