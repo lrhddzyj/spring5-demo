@@ -19,7 +19,8 @@ public class AspectJAnnotationUseingApiDemo {
     //创建Proxy工厂（AspectJ）
     AspectJProxyFactory aspectJProxyFactory = new AspectJProxyFactory(cache);
     //增加AspectJ配置类
-    aspectJProxyFactory.addAspect(AspectJConfiguration.class);
+//    aspectJProxyFactory.addAspect(AspectJConfiguration.class);
+
 
     aspectJProxyFactory.addAdvice(new MethodBeforeAdvice() {
       @Override

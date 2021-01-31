@@ -10,8 +10,8 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class AspectjXmlDemo {
 
   public static void main(String[] args) {
-    ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext("classpath:/META-INF/spring-aop-conetext.xml");
-
+    ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(
+        "classpath:/META-INF/spring-aop-conetext.xml");
 
     applicationContext.refresh();
 
