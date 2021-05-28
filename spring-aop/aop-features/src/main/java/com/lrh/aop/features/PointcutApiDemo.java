@@ -2,9 +2,12 @@ package com.lrh.aop.features;
 
 import com.lrh.aop.features.interceptor.EchoServiceMethodInterceptor;
 import com.lrh.aop.features.pointcut.CustomerPointcut;
+import com.lrh.aop.features.pointcut.EchoServiceEchoMethodPointcut;
 import com.lrh.aop.features.service.DefaultEchoServiceImpl;
 import com.lrh.aop.features.service.EchoService;
+import org.springframework.aop.Pointcut;
 import org.springframework.aop.framework.ProxyFactory;
+import org.springframework.aop.support.ComposablePointcut;
 import org.springframework.aop.support.DefaultPointcutAdvisor;
 
 /**
@@ -18,14 +21,21 @@ public class PointcutApiDemo {
   public static void main(String[] args) {
     CustomerPointcut echoServicePointcut = new CustomerPointcut("echo", EchoService.class);
 
-    DefaultPointcutAdvisor defaultPointcutAdvisor = new DefaultPointcutAdvisor(echoServicePointcut,
+    ComposablePointcut composablePointcut = new ComposablePointcut(
+        EchoServiceEchoMethodPointcut.INSTANCE);
+
+//    composablePointcut.intersection(echoServicePointcut.getClassFilter());
+//    composablePointcut.intersection(echoServicePointcut.getMethodMatcher());
+
+
+    DefaultPointcutAdvisor defaultPointcutAdvisor = new DefaultPointcutAdvisor(composablePointcut,
         new EchoServiceMethodInterceptor());
 
     DefaultEchoServiceImpl defaultEchoService = new DefaultEchoServiceImpl();
     ProxyFactory proxyFactory = new ProxyFactory(defaultEchoService);
     proxyFactory.addAdvisor(defaultPointcutAdvisor);
 
-    EchoService echoService = (EchoService)proxyFactory.getProxy();
+    EchoService echoService = (EchoService) proxyFactory.getProxy();
 
     echoService.echo("abc");
   }
